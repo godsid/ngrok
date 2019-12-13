@@ -1,0 +1,8 @@
+server_addr: mionic.giggoo.com:4443
+trust_host_root_certs: false
+tunnels:
+  mionic:
+    remote_port: 10000
+    proto:
+      tcp: 127.0.0.1:4370
+    

@@ -1,0 +1,15 @@
+[Unit]
+Description=ngrokd
+After=network.target
+
+[Service]
+ExecStart=/opt/ngrok/ngrokd -log=/var/log/ngrok/ngrokd -log-level=ERROR -domain=mionic.giggoo.com -tunnelAddr=:6443 -httpAddr=127.0.0.1:6480 -httpsAddr=127.0.0.1:6443
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+IgnoreSIGPIPE=true
+Restart=always
+RestartSec=3
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
